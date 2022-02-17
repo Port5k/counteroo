@@ -124,4 +124,47 @@ setInterval(() => {
     countdown()
 }, 1000);
 
-//STYLING
+
+// UI
+
+/* Remove animation div after animation ends */
+
+let animationDiv = document.querySelector(".entry_animation");
+setTimeout(() => {
+    animationDiv.remove();
+}, 10000);
+
+/* Light and Dark Mode Toggler*/
+
+let toggler = document.querySelector(".toggler");
+
+let addLightMode = () => {
+    toggler.classList.remove("dark_mode")
+    toggler.classList.add("light_mode");
+    document.body.classList.remove('dark_theme');
+}
+
+let addDarkMode = () => {
+    toggler.classList.remove("light_mode");
+    toggler.classList.add("dark_mode");
+    document.body.classList.add('dark_theme');
+}
+
+/* Change theme according to current time */
+
+let time = new Date().getHours();
+console.log(time);
+
+if ((time <= 6) || (time >= 19))
+    addDarkMode();
+else
+    addLightMode();
+
+/* Chane theme based on button click */
+
+toggler.addEventListener('click', () => {
+    if (toggler.classList.contains("light_mode"))
+        addDarkMode();
+    else if (toggler.classList.contains("dark_mode"))
+        addLightMode();
+})

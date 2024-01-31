@@ -2,7 +2,7 @@ let countdown = () => {
     const year = new Date().getFullYear();
     let startPoint = new Date(year, 1, 01, 00, 00, 00).getTime();
     let currentTime = new Date().getTime();
-    let endPoint = new Date((year), 5, 01, 00, 00, 00).getTime();
+    let endPoint = new Date((year), 4, 31, 23, 59, 59).getTime();
     let majorTimeFrame = endPoint - currentTime;
     let minorTimeFrame = currentTime - startPoint;
 

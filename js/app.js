@@ -1,8 +1,8 @@
 let countdown = () => {
     const year = new Date().getFullYear();
-    let startPoint = new Date(year, 0, 01, 00, 00, 00).getTime();
+    let startPoint = new Date(year, 1, 01, 00, 00, 00).getTime();
     let currentTime = new Date().getTime();
-    let endPoint = new Date((year + 1), 0, 01, 00, 00, 00).getTime();
+    let endPoint = new Date((year), 4, 01, 00, 00, 00).getTime();
     let majorTimeFrame = endPoint - currentTime;
     let minorTimeFrame = currentTime - startPoint;
 
